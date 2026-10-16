@@ -32,6 +32,8 @@ def _from_namespace(state: AgentState) -> tuple[str, str] | None:
         if name not in ns or callable(ns[name]):
             continue
         value = unflatten_headers(ns[name], session.header_paths())
+        if isinstance(value, str) and _ERRORISH.search(value):
+            continue
         if isinstance(value, (str, int, float, bool, list, tuple)) or hasattr(value, "item"):
             answer = format_answer(value, state["question"], state.get("format_spec"))
             if not check_answer(value, answer, state["question"], session.row_numbers(), session.column_letters()):
@@ -39,9 +41,14 @@ def _from_namespace(state: AgentState) -> tuple[str, str] | None:
     return None
 
 
+# Dòng in ra là thông báo lỗi / không tìm thấy (code của agent tự bắt exception rồi in) thì không phải đáp án.
+_ERRORISH = re.compile(r"error|exception|traceback|warning|not found|no attribute|undefined|invalid|"
+                       r"\bnone\b|\bnan\b|could not|cannot|failed", re.I)
+
+
 def _from_last_output(state: AgentState) -> tuple[str, str] | None:
     line = state.get("last_output")
-    if not line:
+    if not line or _ERRORISH.search(line):
         return None
     # "Total revenue: 4084" / "Answer = 4084" -> phần sau dấu ':' hoặc '=' cuối cùng
     m = re.search(r"[:=]\s*([^:=]+)$", line)

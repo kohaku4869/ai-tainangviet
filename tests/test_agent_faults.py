@@ -37,11 +37,11 @@ class FakeModel:
         return AIMessage(self.reply)
 
 
-def run(fast_factory, agent_factory, mode="fast") -> dict:
+def run(fast_factory, agent_factory, mode="fast", samples=2) -> dict:
     fast_mod.get_chat_model = fast_factory
     format_mod.get_chat_model = lambda cfg, t=0.0: FakeModel(fail=True)  # parse_format lỗi -> regex dự phòng
     agent_mod.get_chat_model = agent_factory
-    cfg = Configuration(api_key="test", mode=mode)
+    cfg = Configuration(api_key="test", mode=mode, fast_samples=samples)
     out = graph.invoke({"question_id": "t", "question": QUESTION, "file_path": FILE},
                        config={"configurable": {"_base": cfg}})
     return out
@@ -83,6 +83,11 @@ def main() -> int:
                        config={"configurable": {"_base": cfg}})
     print("5.", repr(out["answer"]), out["trace"][-1])
     ok &= out["answer"] == "7668"
+
+    # 6) Mặc định 1 lời giải: lời giải đó lỗi API -> chuyển sang agent; agent trả lời được.
+    out = run(lambda cfg, t=0.0: FakeModel(fail=True), lambda cfg, t=0.0: FakeModel(fail=False), samples=1)
+    print("6.", repr(out["answer"]), out["route"])
+    ok &= out["answer"] == "7668" and out["route"] == "agent"
 
     print("sessions left:", len(SESSIONS))
     ok &= len(SESSIONS) == 0

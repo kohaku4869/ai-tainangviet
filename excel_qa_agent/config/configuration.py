@@ -35,7 +35,7 @@ class Configuration:
     # --- Router / đường nhanh
     mode: str = "auto"  # auto | fast | agent
     fast_path_max_chars: int = 40_000  # bảng hiển thị dài hơn -> dùng agent
-    fast_samples: int = 2  # số lời giải song song ở đường nhanh (lệch nhau -> agent)
+    fast_samples: int = 1  # số lời giải ở đường nhanh (temp 0; >1 thêm lời giải temp 0.7, lệch nhau -> agent)
     fast_max_fix: int = 1  # số lần cho LLM sửa code lỗi ở đường nhanh
 
     # --- Agent

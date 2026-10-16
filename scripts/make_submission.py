@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ["Dockerfile", ".dockerignore", "requirements.txt", "README.md", "pyproject.toml", "uv.lock", "langgraph.json",
+FILES = ["Dockerfile", "main.py", ".dockerignore", "requirements.txt", "README.md", "pyproject.toml", "uv.lock", "langgraph.json",
          ".env.example"]
 DIRS = ["excel_qa_agent"]
 SECRET_RE = re.compile(r"sk-or-[A-Za-z0-9-]{20,}|sk-[A-Za-z0-9]{32,}")

@@ -13,3 +13,4 @@ wheels/
 .env
 outputs/
 doc/dist/
+out/
