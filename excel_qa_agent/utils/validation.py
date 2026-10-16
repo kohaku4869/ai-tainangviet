@@ -6,6 +6,18 @@ import math
 import re
 
 
+def unflatten_headers(value, header_paths: set[str]):
+    """Đáp án trùng một header đã làm phẳng ("2023 > Leisure and hospitality") -> tầng cuối ("Leisure and hospitality").
+
+    Chuỗi nối bằng " > " là cách biểu diễn nội bộ của bộ đọc bảng, không bao giờ là nhãn thật trong workbook.
+    """
+    if isinstance(value, (list, tuple)):
+        return type(value)(unflatten_headers(v, header_paths) for v in value)
+    if isinstance(value, str) and " > " in value and value.strip() in header_paths:
+        return value.strip().split(" > ")[-1]
+    return value
+
+
 def check_answer(value, formatted: str, query: str, row_numbers: set[int], column_letters: set[str]) -> str | None:
     """Trả về mô tả vấn đề (để LLM tự sửa) hoặc None nếu đáp án trông hợp lệ."""
     if value is None or formatted == "":

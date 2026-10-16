@@ -29,6 +29,9 @@ class AgentState(InputState, total=False):
     route: Literal["fast", "agent"]
     started_at: float
 
+    # --- parse_format (chạy song song với load_workbook)
+    format_spec: dict  # FormatSpec.to_dict()
+
     # --- fast_solver
     candidates: Annotated[list[str], operator.add]  # đáp án đã định dạng từ các lời giải
 
@@ -36,6 +39,7 @@ class AgentState(InputState, total=False):
     messages: Annotated[list[AnyMessage], add_messages]
     steps: int
     llm_failed: bool  # agent gặp lỗi API không phục hồi được
+    last_output: str  # dòng in ra ngắn gần nhất của agent (dự phòng khi hết bước)
 
     # --- kết quả
     final_value: Any

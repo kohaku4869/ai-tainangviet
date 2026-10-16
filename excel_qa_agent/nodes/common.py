@@ -21,3 +21,8 @@ def agent_budget_left(state: AgentState, cfg: Configuration) -> bool:
     steps_ok = state.get("steps", 0) < cfg.agent_max_steps
     time_ok = time.time() - state.get("started_at", time.time()) < cfg.agent_max_seconds
     return steps_ok and time_ok
+
+
+def dispatch(state: AgentState) -> dict:
+    """Điểm hội tụ sau load_workbook và parse_format (chạy song song); việc chọn đường do route_after_load làm."""
+    return {}

@@ -52,6 +52,8 @@ class Configuration:
         if provider not in PROVIDERS:
             raise ValueError(f"Unknown LLM_PROVIDER={provider!r}; choose one of {list(PROVIDERS)}")
         base_url, key_env, default_model = PROVIDERS[provider]
+        if provider == "openrouter":
+            base_url = _env("OPENROUTER_BASE_URL") or base_url  # hệ thống chấm truyền qua --openrouter-base-url
         if provider == "openai":
             base_url = _env("LLM_BASE_URL")
             if not base_url:

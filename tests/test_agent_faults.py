@@ -19,8 +19,9 @@ from excel_qa_agent.tools.session import SESSIONS  # noqa: E402
 # Lấy module (không phải hàm cùng tên được export trong nodes/__init__.py) để thay model giả.
 agent_mod = sys.modules["excel_qa_agent.nodes.agent"]
 fast_mod = sys.modules["excel_qa_agent.nodes.fast_solver"]
+format_mod = sys.modules["excel_qa_agent.nodes.parse_format"]
 
-FILE = str(Path(__file__).resolve().parents[1] / "data" / "xlsx_files" / "p4_t04.xlsx")
+FILE = str(Path(__file__).resolve().parents[1] / "data" / "public_1" / "xlsx_files" / "p4_t04.xlsx")
 QUESTION = ("What is the absolute difference between civilian noninstitutional population and civilian labor force "
             "for women with 'Some college, no degree'? Answer with only the integer, without commas or units.")
 GOOD = "```python\nfinal(abs(df.loc[25, 'E'] - df.loc[26, 'E']))\n```"
@@ -38,6 +39,7 @@ class FakeModel:
 
 def run(fast_factory, agent_factory, mode="fast") -> dict:
     fast_mod.get_chat_model = fast_factory
+    format_mod.get_chat_model = lambda cfg, t=0.0: FakeModel(fail=True)  # parse_format lỗi -> regex dự phòng
     agent_mod.get_chat_model = agent_factory
     cfg = Configuration(api_key="test", mode=mode)
     out = graph.invoke({"question_id": "t", "question": QUESTION, "file_path": FILE},
@@ -65,6 +67,22 @@ def main() -> int:
     out = run(fast_factory, lambda cfg, t=0.0: FakeModel(fail=True))
     print("3.", out["answer"], out["route"], out["trace"][-2:])
     ok &= out["answer"] == "7668" and out["route"] == "agent"
+
+    # 4) Đáp án là header đã làm phẳng ("2023 > ... > Some college, no degree") -> chỉ lấy tầng cuối.
+    header_code = "```python\nfinal(headers['cpsaat07#1']['E'])\n```"
+    out = run(lambda cfg, t=0.0: FakeModel(fail=False, reply=header_code), lambda cfg, t=0.0: FakeModel(fail=True))
+    print("4.", repr(out["answer"]))
+    ok &= out["answer"] == "Some college, no degree"
+
+    # 5) Agent hết bước mà không gọi final() -> lấy biến kết quả trong sandbox.
+    no_final = "```python\nresult = abs(grid().loc[25, 'E'] - grid().loc[26, 'E'])\nprint('Difference:', result)\n```"
+    fast_mod.get_chat_model = lambda cfg, t=0.0: FakeModel(fail=True)
+    agent_mod.get_chat_model = lambda cfg, t=0.0: FakeModel(fail=False, reply=no_final)
+    cfg = Configuration(api_key="test", mode="agent", agent_max_steps=2)
+    out = graph.invoke({"question_id": "t", "question": QUESTION, "file_path": FILE},
+                       config={"configurable": {"_base": cfg}})
+    print("5.", repr(out["answer"]), out["trace"][-1])
+    ok &= out["answer"] == "7668"
 
     print("sessions left:", len(SESSIONS))
     ok &= len(SESSIONS) == 0

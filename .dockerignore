@@ -1,0 +1,11 @@
+.venv
+.git
+.env
+data
+doc
+outputs
+tests
+xlqa
+**/__pycache__
+*.pyc
+*.zip

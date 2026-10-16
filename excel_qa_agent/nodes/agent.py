@@ -12,6 +12,7 @@ from ..config import Configuration
 from ..models.llm import get_chat_model
 from ..graph.state import AgentState
 from ..tools.workbook_tools import TOOL_DOCS
+from ..utils.format_spec import FormatSpec
 
 
 def agent(state: AgentState, config: RunnableConfig) -> dict:
@@ -24,7 +25,9 @@ def agent(state: AgentState, config: RunnableConfig) -> dict:
                      f"{sorted(set(state['candidates']))}). Verify the relevant cells yourself.")
         new_msgs += [
             SystemMessage(P.AGENT_SYSTEM.format(tool_docs=TOOL_DOCS, max_steps=cfg.agent_max_steps)),
-            HumanMessage(P.AGENT_USER.format(question=state["question"], overview=state["overview"], extra=extra)),
+            HumanMessage(P.AGENT_USER.format(
+                question=state["question"], overview=state["overview"], extra=extra,
+                format_hint=FormatSpec.from_dict(state.get("format_spec")).describe())),
         ]
     steps = state.get("steps", 0)
     elapsed = time.time() - state.get("started_at", time.time())

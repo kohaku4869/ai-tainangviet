@@ -33,6 +33,10 @@ class Session:
     def column_letters(self) -> set[str]:
         return {c for t in self.tables for c in t.columns}
 
+    def header_paths(self) -> set[str]:
+        """Các header đã làm phẳng có nhiều tầng (chứa " > ")."""
+        return {d for t in self.tables for d in t.columns.values() if " > " in d}
+
 
 class SessionStore:
     def __init__(self):

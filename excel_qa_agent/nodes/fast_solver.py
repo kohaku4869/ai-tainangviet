@@ -19,7 +19,8 @@ from ..tools.session import SESSIONS, Session
 from ..tools.workbook_tools import WorkbookToolkit
 from ..utils.answer_format import format_answer
 from ..utils.code_runner import Sandbox, extract_code
-from ..utils.validation import check_answer
+from ..utils.format_spec import FormatSpec
+from ..utils.validation import check_answer, unflatten_headers
 from .common import message_text
 
 
@@ -31,7 +32,8 @@ def _solve_once(state: AgentState, session: Session, cfg: Configuration, tempera
     llm = get_chat_model(cfg, temperature)
     question = state["question"]
     msgs = [SystemMessage(P.FAST_SYSTEM),
-            HumanMessage(P.FAST_USER.format(tables=state["tables_text"], question=question))]
+            HumanMessage(P.FAST_USER.format(tables=state["tables_text"], question=question,
+                                            format_hint=FormatSpec.from_dict(state.get("format_spec")).describe()))]
     note = "no attempt"
     for _ in range(cfg.fast_max_fix + 1):
         reply = llm.invoke(msgs, config=config)
@@ -52,7 +54,8 @@ def _solve_once(state: AgentState, session: Session, cfg: Configuration, tempera
             msgs.append(HumanMessage(P.RETRY_USER.format(problem="You did not call final(value).")))
             note = "final() not called"
             continue
-        answer = format_answer(toolkit.final_value, question)
+        toolkit.final_value = unflatten_headers(toolkit.final_value, session.header_paths())
+        answer = format_answer(toolkit.final_value, question, state.get("format_spec"))
         problem = check_answer(toolkit.final_value, answer, question, session.row_numbers(), session.column_letters())
         if problem:
             msgs.append(HumanMessage(P.RETRY_USER.format(problem=problem)))
