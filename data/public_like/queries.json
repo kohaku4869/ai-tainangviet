@@ -1,0 +1,222 @@
+[
+  {
+    "id": "pl_q001",
+    "file_name": "pl_t01.xlsx",
+    "query": "Who was the oldest person on their joining date? Answer with only the last name."
+  },
+  {
+    "id": "pl_q002",
+    "file_name": "pl_t01.xlsx",
+    "query": "What score did the third-youngest person (age measured on their joining date) receive? Answer with only the integer score."
+  },
+  {
+    "id": "pl_q003",
+    "file_name": "pl_t01.xlsx",
+    "query": "Among the five people with the earliest dates of birth, what was the lowest score? Answer with only the integer score."
+  },
+  {
+    "id": "pl_q004",
+    "file_name": "pl_t01.xlsx",
+    "query": "How many people joined in 2023? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q005",
+    "file_name": "pl_t01.xlsx",
+    "query": "What is the average score of the people born before 1995? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "pl_q006",
+    "file_name": "pl_t02.xlsx",
+    "query": "Are agricultural imports for the calendar year-to-date 2024 greater than those for the calendar year-to-date 2023? Answer with only Yes or No."
+  },
+  {
+    "id": "pl_q007",
+    "file_name": "pl_t02.xlsx",
+    "query": "Which fiscal year from 2020 to 2023 had the largest agricultural trade balance? Answer with only the year."
+  },
+  {
+    "id": "pl_q008",
+    "file_name": "pl_t02.xlsx",
+    "query": "What was the agricultural trade balance for calendar year 2022 in billion dollars? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "pl_q009",
+    "file_name": "pl_t02.xlsx",
+    "query": "By how much did fiscal-year agricultural exports change from 2021 to 2023, in billion dollars? Use a negative number for a decrease. Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "pl_q010",
+    "file_name": "pl_t03.xlsx",
+    "query": "Which category had the largest absolute unadjusted percent change from July 2024 to August 2024? Answer with only the category name."
+  },
+  {
+    "id": "pl_q011",
+    "file_name": "pl_t03.xlsx",
+    "query": "What is the relative importance of Shelter in August 2024? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "pl_q012",
+    "file_name": "pl_t03.xlsx",
+    "query": "Among the categories listed under 'Food at home', which had the highest unadjusted index in August 2024? Answer with only the category name."
+  },
+  {
+    "id": "pl_q013",
+    "file_name": "pl_t03.xlsx",
+    "query": "How many categories at indent level 4 had a negative unadjusted percent change from August 2023 to August 2024? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q014",
+    "file_name": "pl_t03.xlsx",
+    "query": "Considering all categories, which category had the largest absolute difference between its 12-month unadjusted percent change (Aug. 2023-Aug. 2024) and its 1-month unadjusted percent change (Jul. 2024-Aug. 2024)? Answer with only the category name."
+  },
+  {
+    "id": "pl_q015",
+    "file_name": "pl_t04.xlsx",
+    "query": "What is the absolute difference between the civilian labor force and the number employed for men with an 'Associate degree'? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q016",
+    "file_name": "pl_t04.xlsx",
+    "query": "What was the average labor force participation rate across all education levels for Asian? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "pl_q017",
+    "file_name": "pl_t04.xlsx",
+    "query": "Which education level had the highest unemployment rate for Black or African American? Answer with only the education level."
+  },
+  {
+    "id": "pl_q018",
+    "file_name": "pl_t04.xlsx",
+    "query": "For women, is the number of unemployed with an advanced degree greater than the number unemployed with a bachelor's degree only? Answer with only Yes or No."
+  },
+  {
+    "id": "pl_q019",
+    "file_name": "pl_t04.xlsx",
+    "query": "What is the total number of employed Hispanic or Latino persons with less than a high school diploma and high school graduates with no college combined? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q020",
+    "file_name": "pl_t05.xlsx",
+    "query": "How many more employed women aged 25 to 54 years were in Education and health services than in Leisure and hospitality? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q021",
+    "file_name": "pl_t05.xlsx",
+    "query": "Identify the industry with the highest number of employed men aged 55 years and over. Answer with only the industry name."
+  },
+  {
+    "id": "pl_q022",
+    "file_name": "pl_t05.xlsx",
+    "query": "What is the total number of employed Hispanic or Latino women aged 20 to 24 years in the Construction and Manufacturing industries combined? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q023",
+    "file_name": "pl_t05.xlsx",
+    "query": "For Asian men aged 25 years and over, does employment in Information exceed that in Financial activities? Answer with only Yes or No."
+  },
+  {
+    "id": "pl_q024",
+    "file_name": "pl_t05.xlsx",
+    "query": "How many more employed people were aged 25 to 54 than aged 55 and over across all industries? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q025",
+    "file_name": "pl_t06.xlsx",
+    "query": "Calculate the total number of self-employed unincorporated workers in nonagricultural industries for women aged 25 to 34 years and 35 to 44 years combined. Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q026",
+    "file_name": "pl_t06.xlsx",
+    "query": "What percentage of men aged 65 years and over working in agriculture and related industries were wage and salary workers? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "pl_q027",
+    "file_name": "pl_t06.xlsx",
+    "query": "Which age group of women had the most government workers in nonagricultural industries? Answer with only the age group."
+  },
+  {
+    "id": "pl_q028",
+    "file_name": "pl_t06.xlsx",
+    "query": "Calculate the total number of unpaid family workers across all age groups in nonagricultural industries. What is the final sum? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q029",
+    "file_name": "pl_t07.xlsx",
+    "query": "Rank the following sectors by the number of women employees in 'Office and administrative support occupations': Information, Financial activities, and Public administration. Answer with the three sector names in descending order, separated by a comma and one space, without numbering."
+  },
+  {
+    "id": "pl_q030",
+    "file_name": "pl_t07.xlsx",
+    "query": "Calculate the combined total of employees in 'Production occupations' and 'Transportation and material moving occupations' for the Durable goods sector. Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q031",
+    "file_name": "pl_t07.xlsx",
+    "query": "Which occupation group has the largest number of employed men in the Construction industry? Answer with only the occupation name."
+  },
+  {
+    "id": "pl_q032",
+    "file_name": "pl_t07.xlsx",
+    "query": "How many people in total are employed in Retail trade? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q033",
+    "file_name": "pl_t08.xlsx",
+    "query": "What is the number of persons at work in nonagricultural industries who work 41 to 48 hours? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q034",
+    "file_name": "pl_t08.xlsx",
+    "query": "Among the categories '41 to 48 hours', '49 to 59 hours', and '60 hours and over', which had the highest percentage of agricultural workers? Answer with only the hour category."
+  },
+  {
+    "id": "pl_q035",
+    "file_name": "pl_t08.xlsx",
+    "query": "What are the average hours of persons who usually work full time in agriculture and related industries? Answer with only the number with one decimal place."
+  },
+  {
+    "id": "pl_q036",
+    "file_name": "pl_t08.xlsx",
+    "query": "How many persons at work in all industries worked 40 hours or more? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q037",
+    "file_name": "pl_t09.xlsx",
+    "query": "What is the absolute difference in the total number of wage and salary workers at work in Professional and business services and Education and health services? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q038",
+    "file_name": "pl_t09.xlsx",
+    "query": "How many wage and salary workers in Leisure and hospitality worked 1 to 34 hours for economic reasons? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q039",
+    "file_name": "pl_t09.xlsx",
+    "query": "Which industry had the highest average hours for persons who usually work full time? Answer with only the industry name."
+  },
+  {
+    "id": "pl_q040",
+    "file_name": "pl_t09.xlsx",
+    "query": "What is the number of self-employed unincorporated workers who usually work part time and worked 1 to 34 hours for noneconomic reasons? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q041",
+    "file_name": "pl_t10.xlsx",
+    "query": "Based on the dataset, what are the numbers of people aged 20 years and over who worked 1 to 34 hours and who worked 35 hours or more? Answer as two integers in the order `1 to 34 hours, 35 hours or more`, separated by a comma and one space, without thousands separators or units."
+  },
+  {
+    "id": "pl_q042",
+    "file_name": "pl_t10.xlsx",
+    "query": "What are the \"Average hours\" for total at work of never married men and women? Answer as `men, women`, using exactly two decimal places and separating the values with a comma and one space."
+  },
+  {
+    "id": "pl_q043",
+    "file_name": "pl_t10.xlsx",
+    "query": "What is the number of workers in \"Total, 16 years and over\" who usually work part time and worked 1 to 34 hours for noneconomic reasons? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "pl_q044",
+    "file_name": "pl_t10.xlsx",
+    "query": "How many married women with spouse present worked 1 to 34 hours for economic reasons? Answer with only the integer, without commas or units."
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "s_q001",
+    "file_name": "s01_orders.xlsx",
+    "query": "What is the total revenue of the North region in March 2024? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "s_q002",
+    "file_name": "s01_orders.xlsx",
+    "query": "Which product had the largest total quantity sold? Answer with only the product name."
+  },
+  {
+    "id": "s_q003",
+    "file_name": "s01_orders.xlsx",
+    "query": "How many orders had a quantity greater than 40? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q004",
+    "file_name": "s01_orders.xlsx",
+    "query": "What is the average unit price of Laptop orders? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "s_q005",
+    "file_name": "s01_orders.xlsx",
+    "query": "Which order ID has the highest revenue? Answer with only the order ID."
+  },
+  {
+    "id": "s_q006",
+    "file_name": "s01_orders.xlsx",
+    "query": "What is the total quantity of all orders? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q007",
+    "file_name": "s02_branches.xlsx",
+    "query": "By how much did the revenue of the Ha Noi branch change from 2022 to 2024? Answer with only the integer (negative if it decreased), without commas or units."
+  },
+  {
+    "id": "s_q008",
+    "file_name": "s02_branches.xlsx",
+    "query": "Which year had the highest total cost across all branches? Answer with only the year."
+  },
+  {
+    "id": "s_q009",
+    "file_name": "s02_branches.xlsx",
+    "query": "Which branch had the highest profit in 2023? Answer with only the branch name."
+  },
+  {
+    "id": "s_q010",
+    "file_name": "s02_branches.xlsx",
+    "query": "What is the total number of staff of the Da Nang branch summed over 2022, 2023 and 2024? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q011",
+    "file_name": "s02_branches.xlsx",
+    "query": "In 2024, what was the revenue per staff member of the Can Tho branch? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "s_q012",
+    "file_name": "s02_branches.xlsx",
+    "query": "Was the 2023 revenue of Ho Chi Minh higher than its 2022 revenue? Answer with only Yes or No."
+  },
+  {
+    "id": "s_q013",
+    "file_name": "s03_two_tables.xlsx",
+    "query": "How many units of Coffee are stored in WH-C? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q014",
+    "file_name": "s03_two_tables.xlsx",
+    "query": "What is the total number of units shipped from WH-B in Q1 2024? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q015",
+    "file_name": "s03_two_tables.xlsx",
+    "query": "Which warehouse shipped the most units in February? Answer with only the warehouse name."
+  },
+  {
+    "id": "s_q016",
+    "file_name": "s03_two_tables.xlsx",
+    "query": "Which warehouse holds the largest total inventory across all products? Answer with only the warehouse name."
+  },
+  {
+    "id": "s_q017",
+    "file_name": "s03_two_tables.xlsx",
+    "query": "What is the total inventory of Pepper across all warehouses? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q018",
+    "file_name": "s04_trade_quarterly.xlsx",
+    "query": "What was the export value of Electronics in Q3 2024? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q019",
+    "file_name": "s04_trade_quarterly.xlsx",
+    "query": "What was the import value of Electronics in Q2 2023? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q020",
+    "file_name": "s04_trade_quarterly.xlsx",
+    "query": "What is the total export value of Seafood in 2023? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q021",
+    "file_name": "s04_trade_quarterly.xlsx",
+    "query": "Which export commodity group had the highest value in Q1 2024? Answer with only the commodity group name."
+  },
+  {
+    "id": "s_q022",
+    "file_name": "s04_trade_quarterly.xlsx",
+    "query": "What is the percentage change in Textiles exports from Q4 2023 to Q4 2024? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "s_q023",
+    "file_name": "s04_trade_quarterly.xlsx",
+    "query": "What is the total import value of Fuel in 2023, ignoring quarters with no data? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q024",
+    "file_name": "s05_students.xlsx",
+    "query": "Who was the youngest student on their enrollment date? Answer with only the first name."
+  },
+  {
+    "id": "s_q025",
+    "file_name": "s05_students.xlsx",
+    "query": "Who was the third-oldest student on their enrollment date? Answer with only the last name."
+  },
+  {
+    "id": "s_q026",
+    "file_name": "s05_students.xlsx",
+    "query": "What is the average score of students in class A2? Answer with only the number rounded to two decimal places."
+  },
+  {
+    "id": "s_q027",
+    "file_name": "s05_students.xlsx",
+    "query": "How many students enrolled in 2021? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q028",
+    "file_name": "s05_students.xlsx",
+    "query": "What is the full name of the student with the highest score? Answer as 'Last Middle First'."
+  },
+  {
+    "id": "s_q029",
+    "file_name": "s05_students.xlsx",
+    "query": "What score did the student with the earliest birth date receive? Answer with only the integer score."
+  },
+  {
+    "id": "s_q030",
+    "file_name": "s06_side_by_side.xlsx",
+    "query": "How many female respondents aged 25-34 were satisfied? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q031",
+    "file_name": "s06_side_by_side.xlsx",
+    "query": "How many male respondents in total were unsatisfied? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q032",
+    "file_name": "s06_side_by_side.xlsx",
+    "query": "Which age group had the most neutral respondents when combining males and females? Answer with only the age group."
+  },
+  {
+    "id": "s_q033",
+    "file_name": "s07_budget.xlsx",
+    "query": "How many detailed expense items (not group totals) had actual spending above budget? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q034",
+    "file_name": "s07_budget.xlsx",
+    "query": "What was the actual 2024 spending on Operations? Answer with only the integer, without commas or units."
+  },
+  {
+    "id": "s_q035",
+    "file_name": "s07_budget.xlsx",
+    "query": "Which detailed expense item had the largest absolute difference between budget and actual? Answer with only the item name."
+  },
+  {
+    "id": "s_q036",
+    "file_name": "s07_budget.xlsx",
+    "query": "Was the total actual spending lower than the total budget? Answer with only Yes or No."
+  }
+]
